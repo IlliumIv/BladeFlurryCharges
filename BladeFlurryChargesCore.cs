@@ -36,8 +36,8 @@ namespace BladeFlurryCharges
         {
             while (true)
             {
-                var buffs = GameController.EntityListWrapper.Player.GetComponent<Life>().Buffs.ToList();
-                if (buffs.Exists(b => b.Name == "charged_attack" && b.Charges == 6))
+                var buffs = GameController.EntityListWrapper.Player.GetComponent<Buffs>().BuffsList;
+                if (buffs.Exists(b => b.Name == "charged_attack" && b.BuffCharges == 6))
                 {
                     if (!Settings.LeftClick)
                         yield return  MouseTools.MouseLeftClickEvent();
